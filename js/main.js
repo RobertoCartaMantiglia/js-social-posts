@@ -55,3 +55,22 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+// Descrizione
+// Ricreiamo un feed social aggiungendo al layout di base fornito, il nostro script JS in cui:
+// Milestone 1 -
+// Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post nel nostro feed, (rimuovendo il post di prova dall'html).
+// Milestone 2 -
+// Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+// Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+
+const containerDiv = document.getElementById("container");
+const newDiv = document.createElement("div");
+containerDiv.append(newDiv);
+console.log(newDiv);
+newDiv.classList.add("post");
+
+posts.forEach((post) => {
+
+})

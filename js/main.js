@@ -72,5 +72,5 @@ console.log(newDiv);
 newDiv.classList.add("post");
 
 posts.forEach((post) => {
-
+   
 })

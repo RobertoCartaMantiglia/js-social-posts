@@ -110,7 +110,7 @@ h1 {
     text-decoration: none;
     color: #404040;
 }
-.like-button:active{
+.active{
     color: #023047;
 }
 

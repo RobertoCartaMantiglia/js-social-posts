@@ -68,6 +68,7 @@ const posts = [
 const containerDiv = document.getElementById("container");
 const likesCounter = [];
 
+
 posts.forEach((post)=>{ 
 
     containerDiv.innerHTML +=
@@ -105,10 +106,13 @@ posts.forEach((post)=>{
     likesCounter.push(post.id);
       //pushato dento array vuoto, i valori degli id del array di oggetti
 
-
 });
 
 console.log(likesCounter);
+
+const likeButton = document.getElementsByClassName("a.like-button.js-like-button");
+
+
 
 // PROVE SU VARI MODI DI IMPLEMENTARE IL CAMBIO DEL COLORE DEL BOTTONE LIKE ma non funziona
 

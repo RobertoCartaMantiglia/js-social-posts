@@ -66,7 +66,6 @@ const posts = [
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 const containerDiv = document.getElementById("container");
-const likesCounter = [];
 
 
 posts.forEach((post)=>{ 
@@ -76,7 +75,7 @@ posts.forEach((post)=>{
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${post.author.image}" alt="Phil Mangione">                    
+                    <img class="profile-pic" src="${post.author.image}" alt="${post.author.name}">                    
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${post.author.name}</div>
@@ -91,38 +90,33 @@ posts.forEach((post)=>{
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button js-like-button" id="likes" href="#" data-postid="1">
+                        <a class="like-button js-like-button" id="likes" href="#" data-postid="${post.id}">
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                             <span class="like-button__label">Mi Piace</span>
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                        Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                     </div>
                 </div> 
             </div>            
         </div>
     </div>`;
-    likesCounter.push(post.id);
-      //pushato dento array vuoto, i valori degli id del array di oggetti
 
 });
 
-console.log(likesCounter);
 
-const likeButton = document.getElementsByClassName("a.like-button.js-like-button");
+//MILESTONE 2
 
+const likedPost = [];
+const likeButtons = document.querySelectorAll(`a.like-button`);
+console.log(likeButtons);
 
-
-// PROVE SU VARI MODI DI IMPLEMENTARE IL CAMBIO DEL COLORE DEL BOTTONE LIKE ma non funziona
-
-// const {id, likes} = posts;
-// console.log (id, likes);
-// const likeButton = document.getElementById("likes");
-// console.log(likeButton);
-
-// likeButton.addEventListener("click", function(){
-//     likeButton.classList.toggle("active");
-// });
+likeButtons.forEach((likeButton)=>{
+    likeButton.addEventListener("click", function(event){
+    event.preventDefault();  //previene la ricarica della pagina al click di ogni bottone
+    likeButton.classList.add("like-button--liked");
+    });
+});
 
 
